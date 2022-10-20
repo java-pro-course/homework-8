@@ -54,7 +54,7 @@ class Plane {
     }
 
 
-    public void improvePlane(com.company.Plane p, int speedI, int heightI) {
+    public void improvePlane(Plane p, int speedI, int heightI) {
         setMaxHeight(p.maxHeight += speedI);
         setMaxSpeed(p.maxSpeed += heightI);
 
@@ -62,7 +62,7 @@ class Plane {
 }
 public class Main {
     public static void main(String[] args) {
-        com.company.Plane p = new com.company.Plane("boeing", 1000, 100, 100, 100);
+        Plane p = new com.company.Plane("boeing", 1000, 100, 100, 100);
         p.getInfo();
         p.improvePlane(p,10, 10);
         p.getInfo();
