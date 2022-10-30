@@ -1,0 +1,68 @@
+import java.util.Scanner;
+
+class Car {
+    private String brand;
+    private int maxhigh;
+    private int power;
+    private int speed;
+    private int maxpass;
+    Car(String brand, int maxhigh, int power, int speed, int maxpass) {
+        this.brand = brand;
+        this.maxhigh = maxhigh;
+        this.power = power;
+        this.speed = speed;
+        this.maxpass = maxpass;
+    }
+
+
+
+
+
+    public void tuning(Car car, int plusPower) {
+        setPower(car.speed + plusPower);
+    }
+
+    public void setPower(int speed) {
+        if (speed > 100000 || speed < 0) {
+            System.err.println("Error! You dont have money.");
+        } else {
+            this.speed = speed;
+        }
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public int getPower() {
+        return power;
+    }
+  public int gethigh() {
+        return maxhigh;
+   }
+   public int getSpeed() {
+        return speed;
+   }
+    public int getpass() {
+        return maxpass;
+    }
+
+
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Создание объекта с помощью конструктора с 4 параметрами
+        Car car = new Car("BMW", 100, 100, 1000, 100);
+        System.out.println("Brand: " + car.getBrand());
+
+        Scanner in = new Scanner(System.in);
+        int plusPower = in.nextInt();
+
+        car.tuning(car, plusPower);
+        System.out.println("Speed: " + car.getSpeed());
+        System.out.println("Max high: " + car.gethigh());
+        System.out.println("Max грузоподьемность: " + car.getPower());
+        System.out.println("Max passengers: " + car.getpass());
+    }
+}
