@@ -1,0 +1,66 @@
+import java.util.Scanner;
+
+class Computer{
+    private String Brand;
+    private String color;
+    
+    private int dS;
+    private int opSpace;
+    Scanner in = new Scanner(System.in);
+    Computer(String Brand, String color, int dS, int opSpace){
+        this.Brand = Brand;
+        this.color = color;
+        this.dS = dS;
+        this.opSpace = opSpace;
+     
+    }
+
+    public String getMark() {
+        return Brand;
+    }
+    public String getColor() {
+        return color;
+    }
+    public int getDiskSpace() {
+        return dS;
+    }
+    public int getOperativeSpace() {
+        return opSpace;
+    }
+
+    public void setMark(String mark) {
+      
+        this.Brand = in.nextLine();
+    }
+    public void setColor(String color) {
+        this.color = in.nextLine();
+    }
+    public void setDiskSpace(int diskSpace) {
+        this.dS = in.nextInt();
+    }
+    public void setOperativeSpace(int operativeSpace) {
+        this.opSpace = in.nextInt();
+    }
+
+    public void getInfo(Computer computer){
+        
+        System.out.println("Информация: ");
+        System.out.println("Марка: " + this.Brand);
+        System.out.println("Цвет: " + this.color);
+        System.out.println("Объём жесткого диска: " + this.dS);
+        System.out.println("Оперативная память: " + this.opSpace);
+    }
+
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Computer computer = new Computer(in.nextLine(), in.nextLine(), in.nextInt(), in.nextInt());
+        computer.getInfo(computer);
+        computer.setColor(in.nextLine());
+        computer.getInfo(computer);
+    }
+}

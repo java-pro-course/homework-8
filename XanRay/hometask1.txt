@@ -1,0 +1,47 @@
+
+
+import java.util.Scanner;
+
+class Car {
+    private String brand;
+    private String color;
+    private int power;
+    private int price;
+
+    Car(String brand, String color, int power, int price) {
+        this.brand = brand;
+        this.color = color;
+        this.power = power;
+        this.price = price;
+    }
+    public String getBrand() {
+        return brand;
+    }
+    public int getPower() {
+        return power;
+    }
+    public String getColor() {
+        return color;
+    }
+    public int getPrice() {
+        return price;
+    }
+    public void getInfo(){
+        System.out.println("Brand: " + getBrand());
+        System.out.println("Color: " + getColor());
+        System.out.println("Power: " + getPower());
+        System.out.println("Price: " + getPrice());
+
+
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Car car = new Car("Lamborgini", "red", 1000, 2400000);
+
+        car.getInfo();
+
+    }
+}
